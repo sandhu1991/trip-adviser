@@ -68,7 +68,7 @@
 <div id="swagger-ui"></div>
 
 <script src="https://trip-adviser-hub.herokuapp.com/swagger-ui-assets/swagger-ui-bundle.js"> </script>
-<script src="{https://trip-adviser-hub.herokuapp.com/swagger-ui-assets/swagger-ui-standalone-preset.js"> </script>
+<script src="https://trip-adviser-hub.herokuapp.com/swagger-ui-assets/swagger-ui-standalone-preset.js"> </script>
 <script>
     window.onload = function() {
         // Build a system
