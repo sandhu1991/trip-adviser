@@ -20,13 +20,16 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 */
 
 $app = new Laravel\Lumen\Application(
-    dirname(__DIR__)
+        realpath(__DIR__ . '/../')
 );
 
-// $app->withFacades();
+$app->instance('path.config', app()->basePath() . DIRECTORY_SEPARATOR . 'config');
+$app->instance('path.storage', app()->basePath() . DIRECTORY_SEPARATOR . 'storage');
 
-// $app->withEloquent();
+$app->withFacades();
+$app->withEloquent();
 
+$app->configure('swagger-lume');
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -58,8 +61,9 @@ $app->singleton(
 | the default version. You may register other files below as needed.
 |
 */
+$app->register(\SwaggerLume\ServiceProvider::class);
 
-$app->configure('app');
+// $app->configure('app');
 
 /*
 |--------------------------------------------------------------------------

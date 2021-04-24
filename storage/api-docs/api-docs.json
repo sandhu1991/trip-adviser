@@ -1,0 +1,76 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Trip API",
+        "contact": {
+            "name": "Support Team",
+            "email": "sandhu.hardilpreet@gmail.com"
+        },
+        "version": "3.0"
+    },
+    "paths": {
+        "/api/trips": {
+            "get": {
+                "summary": "Get All Trips",
+                "operationId": "App\\Http\\Controllers\\FlightController::getTrips",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Validation Response"
+                    }
+                }
+            }
+        },
+        "/api/countires": {
+            "get": {
+                "summary": "Get All Countries",
+                "operationId": "App\\Http\\Controllers\\FlightController::getCountires",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Validation Response"
+                    }
+                }
+            }
+        },
+        "/api/airports": {
+            "post": {
+                "summary": "Get All Airports",
+                "operationId": "App\\Http\\Controllers\\FlightController::getAirports",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Validation Response"
+                    }
+                }
+            }
+        }
+    }
+}

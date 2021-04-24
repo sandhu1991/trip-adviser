@@ -12,7 +12,7 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
+/** @OA\Info(title="My First API", version="0.1") */
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
@@ -20,5 +20,5 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('/trips', ['uses' => 'FlightController@getTrips'] );
     $router->get('/countires', ['uses' => 'FlightController@getCountires'] );
-    $router->get('/airports', ['uses' => 'FlightController@getAirports'] );
+    $router->post('/airports', ['uses' => 'FlightController@getAirports'] );
 });
