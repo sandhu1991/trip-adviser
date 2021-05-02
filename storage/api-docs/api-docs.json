@@ -11,13 +11,54 @@
     "paths": {
         "/api/trips": {
             "get": {
-                "summary": "Get All Trips",
+                "summary": "Get Trips",
                 "operationId": "App\\Http\\Controllers\\FlightController::getTrips",
                 "parameters": [
                     {
-                        "name": "email",
+                        "name": "from",
                         "in": "query",
-                        "required": true,
+                        "description": "Depature Airport Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "departDate",
+                        "in": "query",
+                        "description": "Depature Date",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "description": "Arrival Airport Code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "returnDate",
+                        "in": "query",
+                        "description": "Return Date",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "oneway",
+                        "in": "query",
+                        "description": "Flight Type",
+                        "schema": {
+                            "type": "string",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "airline",
+                        "in": "query",
+                        "description": "Airline Code",
                         "schema": {
                             "type": "string"
                         }
@@ -36,9 +77,9 @@
                 "operationId": "App\\Http\\Controllers\\FlightController::getCountires",
                 "parameters": [
                     {
-                        "name": "email",
+                        "name": "code",
                         "in": "query",
-                        "required": true,
+                        "description": "Airline Code",
                         "schema": {
                             "type": "string"
                         }
@@ -52,14 +93,14 @@
             }
         },
         "/api/airports": {
-            "post": {
+            "get": {
                 "summary": "Get All Airports",
                 "operationId": "App\\Http\\Controllers\\FlightController::getAirports",
                 "parameters": [
                     {
-                        "name": "email",
+                        "name": "code",
                         "in": "query",
-                        "required": true,
+                        "description": "Arrival Airport Code",
                         "schema": {
                             "type": "string"
                         }
