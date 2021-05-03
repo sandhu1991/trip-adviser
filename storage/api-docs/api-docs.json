@@ -11,7 +11,7 @@
     "paths": {
         "/api/trips": {
             "get": {
-                "summary": "Get Trips",
+                "summary": "Get All Trips",
                 "operationId": "App\\Http\\Controllers\\FlightController::getTrips",
                 "parameters": [
                     {
@@ -62,6 +62,14 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "stops",
+                        "in": "query",
+                        "description": "Number of stops",
+                        "schema": {
+                            "type": "integer"
+                        }
                     }
                 ],
                 "responses": {
@@ -79,7 +87,7 @@
                     {
                         "name": "code",
                         "in": "query",
-                        "description": "Airline Code",
+                        "description": "Country Code",
                         "schema": {
                             "type": "string"
                         }
@@ -100,7 +108,7 @@
                     {
                         "name": "code",
                         "in": "query",
-                        "description": "Arrival Airport Code",
+                        "description": "Airport Code",
                         "schema": {
                             "type": "string"
                         }

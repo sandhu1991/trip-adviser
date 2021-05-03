@@ -1,3 +1,4 @@
 /vendor
 .DS_Store
 /storage/.DS_Store.DS_Store
+/resources/views/vendor/swagger-lume/index.blade.php
